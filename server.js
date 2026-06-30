@@ -4,7 +4,14 @@ const queueData = require("./data/queue");
 
 const app = express();
 
-app.use(cors());
+const cors = require("cors");
+
+app.use(cors({
+    origin: [
+        "http://localhost:4200",
+        "https://mc-qms.solcredio.net"
+    ]
+}));
 app.use(express.json());
 
 app.get("/", (req, res) => {
