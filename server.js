@@ -4,8 +4,6 @@ const queueData = require("./data/queue");
 
 const app = express();
 
-const cors = require("cors");
-
 app.use(cors({
     origin: [
         "http://localhost:4200",
@@ -34,7 +32,7 @@ app.put("/api/queue/:room", (req, res) => {
     return res.status(404).json({ success: false, message: "Room not found" });
   }
 
-  queueData[room].number = number;
+  queueData[room].number = String(number).padStart(3, "0");
 
   return res.json({ success: true, room: queueData[room] });
 });
