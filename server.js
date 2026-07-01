@@ -7,7 +7,7 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:4200",
-        "https://mc-qms.solcredio.net"
+        "https://queue.mirandaclinics.com",
     ]
 }));
 app.use(express.json());
